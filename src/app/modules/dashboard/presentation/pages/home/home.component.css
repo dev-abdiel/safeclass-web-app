@@ -1,0 +1,11 @@
+.home {
+    width: 92vw;
+    background-color: var(--grey-background);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    padding: 20px;
+}

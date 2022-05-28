@@ -21,6 +21,19 @@ body {
     flex-direction: row;
 }
 
+.d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-block-inline {
+    display: inline-block;
+}
+
 .empty-space-25h {
     height: 25px;
 }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
 import { SidebarComponent } from './presentation/components/sidebar/sidebar.component';
 
 
@@ -12,7 +14,8 @@ import { SidebarComponent } from './presentation/components/sidebar/sidebar.comp
     SidebarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class SharedModule { }

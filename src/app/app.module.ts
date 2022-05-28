@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    DashboardModule,
     SharedModule
   ],
   providers: [],

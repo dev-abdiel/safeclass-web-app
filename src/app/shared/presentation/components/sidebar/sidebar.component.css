@@ -1,0 +1,22 @@
+.sidebar {
+    max-width: 150px;
+    text-align: center;
+}
+
+.sidebar__icon {
+    margin: 20px 0;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    fill: var(--grey-background);
+    cursor: pointer;
+}
+
+.active {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    fill: var(--blue-background);
+    background-color: var(--grey-background);
+    border-radius: 20px;
+}
