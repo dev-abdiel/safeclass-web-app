@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { LoginComponent } from './presentation/pages/login/login.component';
-import { ForgotPasswordComponent } from './presentation/pages/forgot-password/forgot-password.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 
 

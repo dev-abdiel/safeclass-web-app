@@ -1,0 +1,83 @@
+<div class="home" style="overflow-y: scroll;">
+    <div class="presentation_image">
+        <div class="presentation_card">
+            <h2>Hola de nuevo, <span>{{ userData!.name }}</span></h2>
+        </div>
+        <app-profile-image class="image"></app-profile-image>
+    </div>
+    <div class="empty-space-100h"></div>
+    <!-- User -->
+    <div *ngIf="userData!.type === 'student'" style="margin-left: 20px;">
+        <h2>Estas son tus clases de hoy</h2>
+        <div class="empty-space-50h"></div>
+        <div class="subjects">
+            <div *ngFor="let subject of subjects; let i = index" class="subject">
+                <h3>{{ subject.name }}</h3>
+                <hr style="color: white;">
+                <div style="height: 10px;"></div>
+                <p><b>Hora de inicio: </b>{{ subject.initTime | date:'hh:mm a':'UTC' }}</p>
+                <p><b>Hora de terminación: </b>{{ subject.endTime | date:'hh:mm a':'UTC' }}</p>
+                <div style="height: 10px;"></div>
+                <h4>Docente: {{ subject.teacherName }}</h4>
+            </div>
+        </div>
+    </div>
+    <!-- Teacher -->
+    <div *ngIf="userData!.type === 'teacher'" style="margin-left: 20px;">
+        <div class="empty-space-50h"></div>
+        <div class="empty-space-50h"></div>
+        <h2>Estas son las clases que impartirás hoy</h2>
+        <div class="empty-space-50h"></div>
+        <div class="subjects">
+            <div *ngFor="let subject of subjects; let i = index" class="subject">
+                <div style="height: 10px;"></div>
+                <h3>{{ subject.name }}</h3>
+                <hr style="color: white;">
+                <div style="height: 10px;"></div>
+                <p><b>Hora de inicio: </b>{{ subject.initTime | date:'hh:mm a':'UTC' }}</p>
+                <p><b>Hora de terminación: </b>{{ subject.endTime | date:'hh:mm a':'UTC' }}</p>
+                <div style="height: 10px;"></div>
+                <!-- <h4>Docente: {{ subject.teacherName }}</h4> -->
+            </div>
+        </div>
+    </div>
+    <!-- Administrative -->
+    <div *ngIf="userData!.type === 'administrative'" style="margin-left: 20px;">
+        <div class="type_users">
+            <div class="type_user" (click)="getUsersByType('teacher')">
+                <img src="../../../../../assets/teacher.png" alt="Teacher">
+                <div style="height: 25px;"></div>
+                <h2>Ver Docentes</h2>
+            </div>
+            <div class="type_user"(click)="getUsersByType('student')">
+                <img src="../../../../../assets/student.png" alt="Student">
+                <div style="height: 25px;"></div>
+                <h2>Ver Alumnos</h2>
+            </div>
+        </div>
+        <div class="empty-space-25h"></div>
+        <div *ngIf="loadedUsers.length > 0" class="users">
+            <div *ngFor="let user of loadedUsers" class="user_item">
+                <h4>{{ user.name }}</h4>
+                <br>
+                <h5>Correo: {{ user.email }}</h5>
+                <h5>Carrera: {{ user.career | titlecase }}</h5>
+                <h5 *ngIf="user.semester != null">Semestre: {{ user.semester }}</h5>
+            </div>
+        </div>
+        <div class="empty-space-100h"></div>
+        <h2>Estas son las clases que se impartirán hoy</h2>
+        <div class="empty-space-50h"></div>
+        <div class="subjects">
+            <div *ngFor="let subject of subjects; let i = index" class="subject">
+                <h3>{{ subject.name }}</h3>
+                <hr style="color: white;">
+                <div style="height: 10px;"></div>
+                <p><b>Hora de inicio: </b>{{ subject.initTime | date:'hh:mm a':'UTC' }}</p>
+                <p><b>Hora de terminación: </b>{{ subject.endTime | date:'hh:mm a':'UTC' }}</p>
+                <div style="height: 10px;"></div>
+                <h4>Docente: {{ subject.teacherName }}</h4>
+            </div>
+        </div>
+    </div>
+</div>

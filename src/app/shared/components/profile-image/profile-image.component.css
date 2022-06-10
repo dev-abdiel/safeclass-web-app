@@ -1,0 +1,7 @@
+.profile-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    border: 10px solid var(--blue-background);
+    object-fit: cover;
+}
